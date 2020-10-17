@@ -16,5 +16,16 @@ def condicional():
     return render_template("modelo_condicional.html"), 200 #nome=meu_nome), 200
 
 #comando para rodar aplicação 
-app.run()
 
+@app.route("/repeticao/")
+def repeticao():
+    return render_template("modelo_repeticao.html"), 200
+
+
+
+
+@app.errorhandler(404)
+def nao_encontrado(error):
+    return render_template('nao_encontrado.html'), 404
+
+app.run()
